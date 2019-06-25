@@ -11,12 +11,13 @@ class App extends React.Component {
   temperature:undefined,
   city:undefined,
   humidity:undefined,
-  description:undefined
+  description:undefined,
+  list:[]
 }
   getWeather = async (e) => {
     e.preventDefault();
 const city=e.target.elements.city.value;
-  const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Chennai&appid=${API_KEY}&units=metric`);
+  const api_call = await fetch(`api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml`);
   
   const response = await api_call.json();
   
